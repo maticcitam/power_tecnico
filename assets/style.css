@@ -1,0 +1,123 @@
+/* Global styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0f2032;
+    color: #fff;
+}
+
+/* Header styles */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.custom-tabs-container {
+    width: 100%;
+}
+.custom-tabs {
+    /* border-top-left-radius: 3px; */
+    background-color: #0f2032;
+    /* padding: 0px 24px; */
+    /* border-bottom: 1px solid #d6d6d6; */
+}
+
+.custom-tab {
+    color:white;
+    background-color: #0f2032 !important;
+    border-top-left-radius: 3px;
+    box-shadow: 1px 1px 0px white;
+    border-top: 1px solid lightgray !important;
+    border-left: 1px solid lightgrey !important;
+    border-right: 1px solid lightgrey !important;
+    border-bottom: 0px !important;
+    padding: 12px !important;
+    /* font-family: "system-ui"; */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.custom-tab--selected {
+    color: white !important;
+    background-color: #2a4c71 !important;
+    box-shadow: 1px 1px 0px white;
+    border-left: 1px solid lightgrey !important;
+    border-right: 1px solid lightgrey !important;
+    border-top: 5px solid white !important;
+}
+.custom-tab:hover {
+    color: white !important;
+    background-color: #2a4c71 !important;
+    box-shadow: 1px 1px 0px white;
+    border-left: 1px solid lightgrey !important;
+    border-right: 1px solid lightgrey !important;
+    border-top: 5px solid white !important;
+}
+.custom-dropdown {
+    width: 35%;
+}
+.custom-dropdown .VirtualizedSelectOption {
+    background-color: #2a4c71; /* Change background color of dropdown items */
+    color: white;
+}
+
+.custom-dropdown .VirtualizedSelectFocusedOption {
+    background-color: #637f9e; /* Change background color of hovered item */
+}
+
+.custom-dropdown .Select-control {
+    background-color: #2a4c71; /* Change background color of dropdown before it is selected */
+}
+
+.custom-dropdown .Select-control:hover {
+    background-color: #395e85; 
+    border-color: white;
+}
+.custom-dropdown .Select-value-label {
+    color: white; /* Change font color of selected items */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    float: left;
+}
+
+/* Main content styles */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+/* Button styles */
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Input styles */
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    clear: both;
+}

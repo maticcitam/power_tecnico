@@ -32,7 +32,7 @@ errors_df = pd.DataFrame()
 for model_label in model_labels:
     errors = calculate_errors(result_df['Power consumption [kWh]'], result_df[model_label])
     errors.rename(model_label, inplace=True)
-    errors_df = errors_df.append(errors)
+    errors_df = errors_df._append(errors)
 
 data.rename(mapper={
     'North Tower (kWh)': 'Power consumption [kWh]',
@@ -179,4 +179,4 @@ def update_table(selected_models):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False, host="0.0.0.0", port=10000)

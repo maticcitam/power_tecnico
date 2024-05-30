@@ -13,7 +13,7 @@ import pandas as pd
 import pickle
 import warnings
 import os
-from pandas.core.common import SettingWithCopyWarning
+from pandas.errors import SettingWithCopyWarning
 warnings.filterwarnings('ignore', category=SettingWithCopyWarning)
 
 model_labels = ['Decision Tree Regressor', 'Gradient Boosting Regressor', 'Linear Regression', 'Neural Network MLPRegressor', 'Random Forest Regressor']
@@ -52,8 +52,8 @@ def calculate_errors(data, predictions):
 def run_model(data):  
     params = pickle.load(open('params.pkl', 'rb'))
     models = []
-    for filename in os.listdir('models'):
-        file = os.path.join('models', filename)
+    for filename in os.listdir('models_new'):
+        file = os.path.join('models_new', filename)
         models.append(pickle.load(open(file, 'rb')))
 
     # feature selection
@@ -64,7 +64,6 @@ def run_model(data):
         
     data_power = (data[['North Tower (kWh)']]  - params.loc[['North Tower (kWh)']]['mean']) / params.loc[['North Tower (kWh)']]['std']
     result_df = data_power.rename(mapper={'North Tower (kWh)': 'Power consumption [kWh]'}, axis=1)
-    
     for model, label in zip(models, model_labels):
         result_df[label] = model.predict(data_features.values[:,1:])
     
@@ -76,7 +75,7 @@ if __name__ == '__main__':
     data = load_data()
     result_df = run_model(data)
     print(result_df.head())
-    import matplotlib.pyplot as plt
-    plt.plot(data.index[100:500], result_df['Power consumption [kWh]'][100:500], label='data')
-    plt.plot(data.index[100:500], result_df['Linear Regression'][100:500], label='prediction')
-    plt.show()
+    # import matplotlib.pyplot as plt
+    # plt.plot(data.index[100:500], result_df['Power consumption [kWh]'][100:500], label='data')
+    # plt.plot(data.index[100:500], result_df['Linear Regression'][100:500], label='prediction')
+    # plt.show()
